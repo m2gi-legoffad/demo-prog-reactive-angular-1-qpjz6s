@@ -1,0 +1,6 @@
+<svg #canvas (pointerdown)="startPolygone($event)">
+  <polygon
+    *ngFor="let pointsObs of L_obsPoints | async"
+    [attr.points]="pointsObs | async"
+  ></polygon>
+</svg>

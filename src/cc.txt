@@ -1,0 +1,10 @@
+    const id = evt.pointerId;
+    const filterPointer = filter( (evt: PointerEvent) => evt.pointerId === id );
+    this.L_obsPoints.next( [
+      ...this.L_obsPoints.value,
+      this.pointerMove.pipe(
+        filterPointer,
+        scan( (points, e: PointerEvent) => `${points} ${e.clientX},${e.clientY}`, '' ),
+        takeUntil( this.pointerUp.pipe( filterPointer ) )
+      )
+    ]);

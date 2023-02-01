@@ -1,0 +1,15 @@
+p {
+  font-family: Lato;
+}
+
+svg {
+  width: 100%;
+  height: 100vh;
+  touch-action: none;
+}
+
+svg > polygon {
+    fill: red;
+    stroke: black;
+    stroke-width: 5;
+}
